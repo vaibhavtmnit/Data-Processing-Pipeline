@@ -9,7 +9,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 
 # Module to separate columns and pass only seletec columns to next pipeline
 class ColSeparator():
-
+	
 	def __init__(self, req_cols = 'category'):
 
 		self.oper = oper
@@ -32,7 +32,6 @@ class ColSeparator():
 
 # Module to filter out certain type of features and pass rest of the features to the next pipeline module
 class SkipFormer(BaseEstimator, TransformerMixin):
-
 
 	def __init__(self, skip_feats):
 
@@ -58,7 +57,6 @@ class SkipFormer(BaseEstimator, TransformerMixin):
 
 # Module to apply capping and flooring to treat outliers, Either feature wise capping flooring or single value for all features can be defined
 class CapFloor(BaseEstimator, TransformerMixin):
-
 
 	def __init__(self, feature_names=None, q = {'all' : [.99, .01]}):
 
